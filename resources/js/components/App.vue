@@ -61,7 +61,7 @@
                <b-row>
                    <b-col cols="12 huge-mt" >
                        <h3 class="center-text">Powerful dengan Limit PHP yang Lebih Besar</h3>
-                       <div class="divider" ></div>
+                       <div class="divider mt-3" ></div>
                        <h3 class="mt-3 center-text" >
                            Semua Paket Hosting Sudah Termasuk
                        </h3>
@@ -99,6 +99,8 @@
                                <p>Mendukung s/d 25 max_user_connections dan 100 max_connections</p>
                            </b-col>
                        </b-row>
+                       <div class="divider mt-3" ></div>
+                       <h3 class='center-text mt-5' >Mendukung Penuh Framework Laravel</h3>
                    </b-col>
                </b-row>
            </div>
@@ -190,7 +192,7 @@ library.add(faCheckCircle)
 
     .divider {
         width: 10%;
-        height: 10px;
+        height: 7px;
         background-color: #ddd;
         margin: auto;
     }
