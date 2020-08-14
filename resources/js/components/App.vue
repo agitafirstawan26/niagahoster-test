@@ -7,7 +7,7 @@
                 <b-row>
                 <b-col lg="6" md="6" sm="12" xl="6" >
                 <h1 class="bold" >PHP Hosting</h1>
-                <h2 class="light-font" >Cepat handal penuh dengan modul PHP yang anda butuhkan</h2>
+                <h3 class="light-font" >Cepat handal penuh dengan modul PHP yang anda butuhkan</h3>
                 <div v-for="(benefit, index) in hostingBenefits" :key="index">
                     <h4 class="light-font list-benefit" ><font-awesome-icon style="color: green" :icon="checkIcon" /> {{benefit}}  </h4>
                 </div>
@@ -101,9 +101,41 @@
                        </b-row>
                        <div class="divider mt-3" ></div>
                        <h3 class='center-text mt-5' >Mendukung Penuh Framework Laravel</h3>
+                       <b-row>
+                           <b-col md="6" lg="6" xl="6" sm="12" class="mt-3" >
+                               <div>
+                                   <p>Tak perlu menggunakan dedicated server ataupun VPS yang mahal. Layanan PHP hosting murah kami mendukung penuh framework favorite anda </p>
+                               </div>
+                               <div>
+                                    <p style="margin-bottom: .5rem" ><font-awesome-icon style="color: green" :icon="checkIcon" /> Install Laravel 1 <strong>klik</strong> dengan Softaculous Installer  </p>
+                                    <p  style="margin-bottom: .5rem"><font-awesome-icon style="color: green" :icon="checkIcon" /> Mendukung ekstensi <strong>MCrypt, Phar, mbstring, json, </strong> dan <strong>fileinfo</strong></p>
+                                    <p  style="margin-bottom: .5rem"><font-awesome-icon style="color: green" :icon="checkIcon" /> Tersedia <strong>Composer</strong> dan <strong>SSH</strong> untuk menginstall packages pilihan anda  </p>
+                                    <span  >Nb, Paket composer dan SSH hanya tersedia pada paket personal dan bisnis</span>
+                                    <Button :buttonStyle="styles.blueBtn" :containerStyle="styles.mt5" :title="chooseHostingTitle"/>
+                               </div>
+                           </b-col>
+                           <b-col md="6" lg="6" xl="6" sm="12" >
+                               <img class="banner1" src="../../assets/illustration banner support laravel hosting.svg" alt="banner_support">
+                           </b-col>
+                       </b-row>
                    </b-col>
                </b-row>
            </div>
+            <div class="line mt-5" ></div>
+            <div class="container-home">
+                <b-row>
+                    <b-col cols="12" class="mb-5" >
+                        <h3 class="mt-4 center-text" >Modul Lengkap untuk Menjalankan Aplikasi PHP Anda</h3>
+                    </b-col>
+                    <b-col v-for="(run, index) in phpRunning" :key="index" sm="12" md="3" xl="3" lg="3" >
+                        <a class="running" href="#">{{run}}</a>
+                    </b-col>
+                    <b-col cols="12" class="center-text mt-5" >
+                        <Button :buttonStyle="styles.implicitBtn" :title="implicitTxt" />
+                    </b-col>
+                    <b-col lg="6" md="6" sm="12" xl="6" ></b-col>
+                </b-row>
+            </div>
         </div>
     </div>
 </template>
@@ -115,7 +147,9 @@ import Pricing from './Pricing'
 import {HOSTING_BENEFIT} from '../constant'
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import {HOSTING_PRICE} from '../constant'
+import {HOSTING_PRICE, PHP_RUNNING} from '../constant'
+import Button from './Button'
+import {currencyFormat} from '../helper'
 library.add(faCheckCircle)
     export default {
         mounted() {
@@ -124,15 +158,32 @@ library.add(faCheckCircle)
         components: {
             Navbar,
             TopNavbar,
-            Pricing
+            Pricing,
+            Button
         },
         data () {
             return {
                 hostingBenefits: HOSTING_BENEFIT,
                 checkIcon: ['fas', 'check-circle'],
-                dataPricing: HOSTING_PRICE
+                dataPricing: HOSTING_PRICE,
+                chooseHostingTitle: "Pilih Hosting Anda",
+                styles: {
+                    mt4: ['mt-4'],
+                    mt5: ['mt-5'],
+                    blueBtn: ['blue-btn'],
+                    implicitBtn: ['implicit-outline']
+
+                },
+                phpRunning: PHP_RUNNING,
+                implicitTxt: 'Selengkapnya'
+
             }
-        }
+        },
+       computed: {
+           currencyFormatHandler (value) {
+               return currencyFormat(value)
+           }
+       }
     }
 </script>
 
@@ -200,5 +251,20 @@ library.add(faCheckCircle)
     img.package {
         height: 100px;
         width: 100px;
+    }
+
+    .blue-btn {
+        background-color: #2997ff !important;
+        color: white !important;
+    }
+
+    a.running {
+        color: #333 !important;
+    }
+
+    .implicit-outline {
+        border: 1px solid #333 !important;
+        background-color: transparent !important;
+        color: #333 !important;
     }
 </style>

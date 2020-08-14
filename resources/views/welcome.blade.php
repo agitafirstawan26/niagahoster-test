@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../sass/app.scss">
     <link rel="stylesheet" href="../sass/fonts.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Roboto:wght@100&display=swap" rel="stylesheet">
-     <!-- Styles -->
+    <!-- Styles -->
     <style>
         html,
         body {
@@ -70,7 +70,13 @@
         h2,
         h3,
         h4,
-        h5 {
+        h5,
+        p
+         {
+            font-family: 'Montserrat', sans-serif !important
+        }
+
+        a {
             font-family: 'Montserrat', sans-serif !important
         }
     </style>

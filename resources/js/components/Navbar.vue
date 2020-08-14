@@ -52,4 +52,12 @@ export default {
       color: #333;
       padding: 10px;
   }
+
+  @media only screen and (max-width: 800px) {
+  .ml-auto a {
+      font-size: 14px;
+      color: #333;
+      padding: 10px;
+  }
+  }
 </style>
