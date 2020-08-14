@@ -140,3 +140,12 @@ export const PHP_RUNNING = [
   'phalcon',
   'uuid'
 ]
+
+export const POWERFUL_LIST = [
+  'max execution time 300s',
+  'post max size 128 MB',
+  'max execution time 300s',
+  'upload max file size 128MB',
+  'PHP memory limit 1024 MB',
+  'max input vars 2500'
+]

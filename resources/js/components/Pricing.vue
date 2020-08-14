@@ -80,7 +80,14 @@ export default {
         border-bottom: none !important
     }
 
-    .best-seller p, h5, h2 {
+    .best-seller p {
+        color: white !important;
+    }
+
+    .best-seller h2 {
+        color: white !important;
+    }
+    .best-seller h5 {
         color: white !important;
     }
     .btn-outline {

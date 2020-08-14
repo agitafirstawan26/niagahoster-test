@@ -61,6 +61,15 @@
                <b-row>
                    <b-col cols="12 huge-mt" >
                        <h3 class="center-text">Powerful dengan Limit PHP yang Lebih Besar</h3>
+                       <b-row class='mt-4' >
+                           <div class="w-75 mx-auto" >
+                               <b-row class="mb-4" >
+                                <b-col v-for="(power, index) in powerfulList" :key="index" lg="6" md="6" xl="6" sm="12" >
+                                    <p style="margin-bottom: .5rem" ><font-awesome-icon style="color: green" :icon="checkIcon" /> {{power}}  </p>
+                                </b-col>
+                               </b-row>
+                           </div>
+                       </b-row>
                        <div class="divider mt-3" ></div>
                        <h3 class="mt-3 center-text" >
                            Semua Paket Hosting Sudah Termasuk
@@ -133,7 +142,13 @@
                     <b-col cols="12" class="center-text mt-5" >
                         <Button :buttonStyle="styles.implicitBtn" :title="implicitTxt" />
                     </b-col>
-                    <b-col lg="6" md="6" sm="12" xl="6" ></b-col>
+                    <b-col class='mt-5' lg="6" md="6" sm="12" xl="6" >
+                        <h2>Linux Hosting yang Stabil dengan Teknologi LVE</h2>
+                        <p> SuperMicro <strong>Intel Xeon 24-cores</strong> server dengan ram <strong>128 GB</strong> dan teknologi <strong>LVE CloudLinux</strong> untuk stablitas server Anda. Dilengkapi dengan <strong>SSD</strong> untuk kecepatan <strong>MySQL</strong> dan Caching. Apache load balancer berbasis LiteSpeed Technologies, <strong>CageFS</strong> Security, <strong>Raid-1o</strong> protection dan backup untuk keamanan website PHP anda </p>
+                    </b-col>
+                    <b-col class='mt-5' lg="6" md="6" sm="12" xl="6" >
+                        <img class="banner1" src="../../assets/Image support.png" alt="support">
+                    </b-col>
                 </b-row>
             </div>
         </div>
@@ -147,7 +162,7 @@ import Pricing from './Pricing'
 import {HOSTING_BENEFIT} from '../constant'
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import {HOSTING_PRICE, PHP_RUNNING} from '../constant'
+import {HOSTING_PRICE, PHP_RUNNING, POWERFUL_LIST} from '../constant'
 import Button from './Button'
 import {currencyFormat} from '../helper'
 library.add(faCheckCircle)
@@ -175,7 +190,8 @@ library.add(faCheckCircle)
 
                 },
                 phpRunning: PHP_RUNNING,
-                implicitTxt: 'Selengkapnya'
+                implicitTxt: 'Selengkapnya',
+                powerfulList: POWERFUL_LIST
 
             }
         },
@@ -206,7 +222,7 @@ library.add(faCheckCircle)
     }
     .banner1 {
         height: 300px;
-        width: 100%;
+        width: auto;
     }
     .line {
         width: 100%;
